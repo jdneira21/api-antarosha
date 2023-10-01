@@ -1,7 +1,6 @@
 import 'dotenv/config'
 import cors from 'cors'
 import http from 'node:http'
-import path from 'node:path'
 
 import express, { Application } from 'express'
 import { ApolloServer } from '@apollo/server'
@@ -70,7 +69,6 @@ async function startApolloServer() {
   
   app.use(cors())
   app.get('/', (_, res) => res.send('API ANTAROSHA - JDesign'))
-  app.use(express.static(path.join(__dirname, 'public')))
   app.use(express.json({ limit: '5mb'}))
   
 
